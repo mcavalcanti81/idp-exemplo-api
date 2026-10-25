@@ -24,6 +24,11 @@ def health() -> dict:
     return {"status": "ok"}
 
 
+@app.get("/ping")
+def ping() -> dict:
+    return {"ping": "pong"}
+
+
 @app.get("/")
 def root() -> dict:
     log.info("root chamado")
