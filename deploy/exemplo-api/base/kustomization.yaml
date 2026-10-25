@@ -6,4 +6,4 @@ resources:
 images:
 - name: exemplo-api
   newName: ghcr.io/mcavalcanti81/exemplo-api
-  digest: sha256:d4a6158e2e5971994e33ad1f267464d78450f4f1c8a3a17cfa4a248ef3e753fe
+  digest: sha256:0b399ce7b4cc98acacc68452b64d39bb26354140cf6b22045957ece82e3bf255
