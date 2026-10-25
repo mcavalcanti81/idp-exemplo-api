@@ -1,0 +1,25 @@
+# Configuração única do repositório — ver ADR-0006 do plat-idplabs.
+apiVersion: plat-idplabs/v1
+kind: Repository
+metadata:
+  system: exemplo
+  owner: marquinho
+spec:
+  compliance:
+    level: 2
+    mode: block
+  engine:
+    version: v0.1.0
+  layout:
+    components: [apps/*]
+  delivery:
+    environmentsRepo: github.com/mcavalcanti81/idp-ambientes
+    environments:
+      - name: dev
+        cluster: in-cluster
+        namespace: "{system}-dev"
+        autoPromote: true
+      - name: prod
+        cluster: in-cluster
+        namespace: "{system}"
+        approvers: [mcavalcanti81]

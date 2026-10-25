@@ -1,0 +1,15 @@
+# Gatilho fino: nenhuma configuração aqui. Tudo vem do platform.yaml (ADR-0006).
+name: ci
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: write
+  packages: write
+
+jobs:
+  plataforma:
+    uses: mcavalcanti81/idp-engine/.github/workflows/run.yml@v0.1.0

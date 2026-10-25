@@ -1,0 +1,23 @@
+# Descritor de serviço — schema da ADR-0003 do plat-idplabs.
+apiVersion: plat-idplabs/v1
+kind: Service
+metadata:
+  name: exemplo-api
+  owner: marquinho
+  system: exemplo
+spec:
+  type: backend-api
+  runtime: kubernetes
+  environments: [dev, prod]
+  repository: mcavalcanti81/idp-exemplo-api
+  pipelineTemplate: python-api/release@v1
+  resourceModule: none
+  observability:
+    healthCheck: /health
+    logs: json-stdout
+    alerts: not-configured
+  security:
+    sast: required
+    dependencyScan: required
+    imageScan: required
+  criticality: baixa
